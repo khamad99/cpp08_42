@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:13:59 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/10/26 11:34:15 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/25 13:45:39 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Span::Span(unsigned int n) : _n(n)
 {
+	_v.reserve(n);
 }
 
 Span::Span(Span const & src)
@@ -73,4 +74,13 @@ int		Span::longestSpan()
 	return (*(tmp.end() - 1) - *(tmp.begin()));
 }
 
+const char* Span::FullException::what() const throw()
+{
+	return ("Container is full");
+}
+
+const char* Span::NoSpanException::what() const throw()
+{
+	return ("No span to find");
+}
 

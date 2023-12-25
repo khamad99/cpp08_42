@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:12:37 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:55 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/12/25 13:45:36 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,12 @@ class Span
 		class FullException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw()
-				{
-					return ("Container is full");
-				}
+				virtual const char* what() const throw();
 		};
 		class NoSpanException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw()
-				{
-					return ("No span to find");
-				}
+				virtual const char* what() const throw();
 		};
 };
 
