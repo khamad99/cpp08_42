@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:13:59 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/12/25 13:45:39 by kalshaer         ###   ########.fr       */
+/*   Updated: 2024/01/01 12:39:49 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,15 @@ void	Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterato
 	this->_v.insert(this->_v.end(), begin, end);
 }
 
-int		Span::shortestSpan()
+int	Span::shortestSpan()
 {
-	if (this->_v.size() <= 1)
+	if (this->_v.size() <= 1) 
 		throw NoSpanException();
-	std::vector<int> tmp = this->_v;
-	std::sort(tmp.begin(), tmp.end());
-	int min = std::numeric_limits<int>::max();
-	for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end() - 1; it++)
-	{
-		if (*(it + 1) - *it < min)
-			min = *(it + 1) - *it;
-	}
-	return (min);
+	sort(this->_v.begin(), this->_v.end());
+	std::vector<int> differences(this->_v.size() -1);
+	std::adjacent_difference(this->_v.begin(), this->_v.end(), differences.begin());
+	int minSpan = *std::min_element(differences.begin() + 1, differences.end());
+	return minSpan;
 }
 
 int		Span::longestSpan()

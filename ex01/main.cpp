@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:15:16 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/12/25 12:12:49 by kalshaer         ###   ########.fr       */
+/*   Updated: 2024/01/01 12:39:00 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 	try
 	{
 		Span sp = Span(5);
-		sp.addNumber(5);
+		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);

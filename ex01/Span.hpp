@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:12:37 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/12/25 13:45:36 by kalshaer         ###   ########.fr       */
+/*   Updated: 2024/01/01 12:16:08 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <vector>
 # include <list>
 # include <deque>
+# include <numeric>
 
 class Span
 {
