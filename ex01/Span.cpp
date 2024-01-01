@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:13:59 by kalshaer          #+#    #+#             */
-/*   Updated: 2024/01/01 12:39:49 by kalshaer         ###   ########.fr       */
+/*   Updated: 2024/01/01 13:31:49 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int	Span::shortestSpan()
 {
 	if (this->_v.size() <= 1) 
 		throw NoSpanException();
-	sort(this->_v.begin(), this->_v.end());
-	std::vector<int> differences(this->_v.size() -1);
+	std::sort(this->_v.begin(), this->_v.end());
+	std::vector<int> differences(this->_v.size());
 	std::adjacent_difference(this->_v.begin(), this->_v.end(), differences.begin());
 	int minSpan = *std::min_element(differences.begin() + 1, differences.end());
 	return minSpan;
